@@ -11,6 +11,7 @@ public class OddNumbersExterminator {
     }
 
     public List exterminate(List<Integer> numbers){
+        odd.clear();
         if(numbers != null) {
             for (Integer number : numbers) {
                 if (number % 2 == 0) {
@@ -24,7 +25,6 @@ public class OddNumbersExterminator {
 
         }
         return odd;
-
     }
 
 

@@ -25,31 +25,71 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
-        List<Integer> numbers = new ArrayList<Integer>();
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        List<Integer> ToExterminate = new ArrayList<Integer>();
+        OddNumbersExterminator numbersToExterminate = new OddNumbersExterminator();
         //When
-        List result =  exterminator.exterminate(numbers);
+        List result =  numbersToExterminate.exterminate(ToExterminate);
         //Then
         Assert.assertEquals(0, result.size() );
     }
+
+
+
+
+
+    List<Integer> numbersresult = new ArrayList<Integer>();
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
-        List<Integer> numbers = new ArrayList<Integer>();
-        List<Integer> numbersresult = new ArrayList<Integer>();
-        int k =0;
-        for (int n = 0; n<10 ; n++){
-             k = n*2;
-            numbersresult.add(k);
-        }
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        for (int n = 0; n<20 ; n++){
-            numbers.add(n);
-        }
+        List<Integer> TestOddNumbersResult = new ArrayList<Integer>();
+        TestOddNumbersResult.add(10);
+        TestOddNumbersResult.add(22);
+        TestOddNumbersResult.add(184);
+
+        List<Integer> numbersToExterminate = new ArrayList<Integer>();
+        numbersToExterminate.add(10);
+        numbersToExterminate.add(22);
+        numbersToExterminate.add(13);
+        numbersToExterminate.add(15);
+        numbersToExterminate.add(184);
+        numbersToExterminate.add(17);
+        numbersToExterminate.add(43);
+
+        OddNumbersExterminator toExterminate = new OddNumbersExterminator();
+
         //When
-        List result =  exterminator.exterminate(numbers);
+        List result =  toExterminate.exterminate(numbersToExterminate);
         //Then
-        Assert.assertEquals(numbersresult, result );
+        Assert.assertEquals(TestOddNumbersResult, result );
+    }
+
+    @Test
+    public void testOddNumbersExterminatorRepetedNormalList(){
+        //Given
+        List<Integer> TestOddNumbersResult = new ArrayList<Integer>();
+        TestOddNumbersResult.add(10);
+        TestOddNumbersResult.add(22);
+        TestOddNumbersResult.add(184);
+
+        List<Integer> numbersToExterminate = new ArrayList<Integer>();
+        numbersToExterminate.add(10);
+        numbersToExterminate.add(22);
+        numbersToExterminate.add(13);
+        numbersToExterminate.add(15);
+        numbersToExterminate.add(184);
+        numbersToExterminate.add(17);
+        numbersToExterminate.add(43);
+
+        OddNumbersExterminator toExterminate = new OddNumbersExterminator();
+
+        //When
+        toExterminate.exterminate(numbersToExterminate);
+        toExterminate.exterminate(numbersToExterminate);
+        toExterminate.exterminate(numbersToExterminate);
+        List result = toExterminate.exterminate(numbersToExterminate);
+
+        //Then
+        Assert.assertEquals(TestOddNumbersResult, result );
     }
 
 
