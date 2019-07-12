@@ -1,8 +1,6 @@
 package com.kodilla.testing.calculator;
 
 public class Calculator {
-    int a;
-    int b;
 
     public Calculator(){
 
