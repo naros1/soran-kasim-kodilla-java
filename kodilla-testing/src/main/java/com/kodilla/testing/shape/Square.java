@@ -1,18 +1,25 @@
 package com.kodilla.testing.shape;
 
-public class Square extends ShapeCollector {
+public class Square implements Shape
+{
     private double a;
+    private double h;
 
     public Square(double a) {
         this.a = a;
+
     }
 
-    public String getShapeName(){
+
+    @Override
+    public String getShapeName() {
         return "Square";
     }
 
-    public Double getField(){
+    @Override
+    public double getField() {
 
-        return a*a;
+
+        return a * a ;
     }
 }

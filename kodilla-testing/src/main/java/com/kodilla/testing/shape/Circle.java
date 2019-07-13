@@ -1,18 +1,26 @@
 package com.kodilla.testing.shape;
 
-public class Circle extends ShapeCollector {
+public class Circle implements Shape {
     private double r;
 
     public Circle(double r) {
         this.r = r;
     }
 
-    public String getShapeName(){
+
+    @Override
+    public String getShapeName() {
         return "Circle";
     }
 
-    public Double getField(){
+    @Override
+    public double getField() {
 
-        return 3.14 * r * r;
+
+        return 3.14*r*r;
+    }
+
+    public double getR() {
+        return r;
     }
 }
