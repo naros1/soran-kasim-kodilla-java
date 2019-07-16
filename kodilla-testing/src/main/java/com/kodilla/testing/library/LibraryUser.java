@@ -1,9 +1,9 @@
 package com.kodilla.testing.library;
 
 public class LibraryUser {
-    String firstname;
-    String lastname;
-    String peselId;
+    private String firstname;
+    private String lastname;
+    private String peselId;
 
     public LibraryUser(String firstname, String lastname, String peselId) {
         this.firstname = firstname;
@@ -34,13 +34,13 @@ public class LibraryUser {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){ return true;}
+        if (o == null || getClass() != o.getClass()){ return false;}
 
         LibraryUser that = (LibraryUser) o;
 
-        if (!firstname.equals(that.firstname)) return false;
-        if (!lastname.equals(that.lastname)) return false;
+        if (!firstname.equals(that.firstname)){ return false;}
+        if (!lastname.equals(that.lastname)){ return false;}
         return peselId.equals(that.peselId);
     }
 

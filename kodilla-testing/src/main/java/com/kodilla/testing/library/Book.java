@@ -1,9 +1,9 @@
 package com.kodilla.testing.library;
 
 public class Book {
-    String title;
-    String author;
-    int publicationYear;
+    private String title;
+    private String author;
+    private int publicationYear;
 
     public Book(String title, String author, int publicationYear) {
         this.title = title;
@@ -35,13 +35,13 @@ public class Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){ return true;}
+        if (o == null || getClass() != o.getClass()){ return false;}
 
         Book book = (Book) o;
 
-        if (publicationYear != book.publicationYear) return false;
-        if (!title.equals(book.title)) return false;
+        if (publicationYear != book.publicationYear){ return false;}
+        if (!title.equals(book.title)){ return false;}
         return author.equals(book.author);
     }
 
