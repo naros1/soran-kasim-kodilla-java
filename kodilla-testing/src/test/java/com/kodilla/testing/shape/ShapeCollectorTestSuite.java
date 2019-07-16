@@ -51,7 +51,7 @@ public class ShapeCollectorTestSuite {
         //When
         Shape retrivedShape = shapes.getFigure(0);
         //Then
-        Assert.assertEquals(shapes.shapeList.get(0),retrivedShape);
+        Assert.assertEquals(shapes.shapes.get(0),retrivedShape);
     }
     @Test
     public void testGetFieldShapeCollectorCircle() {
