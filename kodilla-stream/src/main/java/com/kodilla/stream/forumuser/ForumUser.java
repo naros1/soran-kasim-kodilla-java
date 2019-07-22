@@ -6,14 +6,14 @@ public final class ForumUser {
     private final int id;
     private final String userName;
     private final char male;
-    private final LocalDate yearOfBirth;
+    private final LocalDate dateOfBirth;
     private final int numberOfPosts;
 
-    public ForumUser(final int id,final String userName,final char male,final LocalDate yearOfBirth,final int numberOfPosts) {
+    public ForumUser(final int id,final String userName,final char male,final LocalDate dateOfBirth,final int numberOfPosts) {
         this.id = id;
         this.userName = userName;
         this.male = male;
-        this.yearOfBirth = yearOfBirth;
+        this.dateOfBirth = dateOfBirth;
         this.numberOfPosts = numberOfPosts;
     }
 
@@ -29,8 +29,8 @@ public final class ForumUser {
         return male;
     }
 
-    public LocalDate getYearOfBirth() {
-        return yearOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public int getNumberOfPosts() {
@@ -43,7 +43,7 @@ public final class ForumUser {
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", male=" + male +
-                ", yearOfBirth=" + yearOfBirth +
+                ", yearOfBirth=" + dateOfBirth +
                 ", numberOfPosts=" + numberOfPosts +
                 '}';
     }
@@ -59,7 +59,7 @@ public final class ForumUser {
         if (male != forumUser.male) return false;
         if (numberOfPosts != forumUser.numberOfPosts) return false;
         if (!userName.equals(forumUser.userName)) return false;
-        return yearOfBirth.equals(forumUser.yearOfBirth);
+        return dateOfBirth.equals(forumUser.dateOfBirth);
     }
 
     @Override
@@ -67,7 +67,7 @@ public final class ForumUser {
         int result = id;
         result = 31 * result + userName.hashCode();
         result = 31 * result + (int) male;
-        result = 31 * result + yearOfBirth.hashCode();
+        result = 31 * result + dateOfBirth.hashCode();
         result = 31 * result + numberOfPosts;
         return result;
     }
