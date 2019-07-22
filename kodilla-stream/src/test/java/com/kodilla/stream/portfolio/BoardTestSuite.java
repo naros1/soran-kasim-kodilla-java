@@ -166,7 +166,7 @@ public class BoardTestSuite {
         double averageSimpleWay = (double) sum/ (double) count;
 
         //Then
-        Assert.assertEquals(-10.3, average, 0.1);
-        Assert.assertEquals(-10.3, averageSimpleWay, 0.1);
+        Assert.assertEquals(-10.33, average, 0.01);
+        Assert.assertEquals(-10.33, averageSimpleWay, 0.01);
     }
 }
