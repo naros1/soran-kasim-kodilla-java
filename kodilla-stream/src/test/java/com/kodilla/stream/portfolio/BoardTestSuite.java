@@ -145,28 +145,17 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();
-        inProgressTasks.add(new TaskList("In progress"));
-        long sum = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> t.getCreated().compareTo(LocalDate.now()))
-                .collect(summingInt(z -> z));
-        long count = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> t.getCreated().compareTo(LocalDate.now()))
-                .count();
+
         double average = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
+                .filter(z -> z.getName() == "In progress")
                 .flatMap(tl -> tl.getTasks().stream())
                 .mapToInt(t -> t.getCreated().compareTo(LocalDate.now()))
-                .average().orElse(-1);
+                .average().orElse(-10000000);
 
-        double averageSimpleWay = (double) sum/ (double) count;
+
 
         //Then
         Assert.assertEquals(-10.33, average, 0.01);
-        Assert.assertEquals(-10.33, averageSimpleWay, 0.01);
+
     }
 }
