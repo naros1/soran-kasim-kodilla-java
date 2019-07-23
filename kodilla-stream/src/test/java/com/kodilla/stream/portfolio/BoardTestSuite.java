@@ -145,14 +145,11 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-
         double average = project.getTaskLists().stream()
                 .filter(z -> z.getName() == "In progress")
                 .flatMap(tl -> tl.getTasks().stream())
                 .mapToInt(t -> t.getCreated().compareTo(LocalDate.now()))
                 .average().orElse(-10000000);
-
-
 
         //Then
         Assert.assertEquals(-10.33, average, 0.01);
