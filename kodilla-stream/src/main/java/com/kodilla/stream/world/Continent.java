@@ -5,24 +5,24 @@ import java.util.List;
 
 
 public final class Continent {
-    private final String continentName;
-    private final List<Country> countryOnContinent = new ArrayList<>();
+    private final String Name;
+    private final List<Country> countries = new ArrayList<>();
 
 
     public Continent(final String continentName) {
-        this.continentName = continentName;
+        this.Name = continentName;
     }
 
     public void addCountry(Country country){
-        countryOnContinent.add(country);
+        countries.add(country);
     }
 
     public boolean removeCountry(Country country){
-        return countryOnContinent.remove(country);
+        return countries.remove(country);
     }
 
-    public List<Country> getCountryOnContinent() {
-        return countryOnContinent;
+    public List<Country> getCountriesOnContinent() {
+        return countries;
     }
 
     @Override
@@ -32,7 +32,7 @@ public final class Continent {
 
         Continent continent = (Continent) o;
 
-        return continentName.equals(continent.continentName);
+        return Name.equals(continent.Name);
     }
 
 

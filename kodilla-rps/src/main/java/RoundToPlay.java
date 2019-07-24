@@ -10,7 +10,4 @@ public class RoundToPlay {
         return roundsToPlay;
     }
 
-    public void setRoundsToPlay(int roundsToPlay) {
-        this.roundsToPlay = roundsToPlay;
-    }
 }

@@ -26,6 +26,7 @@ public class Player {
 
     public void addWin(){
         wins++;
+        System.out.println("\nWygrales!!!\n");
     }
 
 

@@ -3,21 +3,21 @@ package com.kodilla.stream.world;
 import java.math.BigDecimal;
 
 public final class Country {
-    private final BigDecimal peopleQuantity;
-    private final String countryName;
+    private final BigDecimal peoplesCount;
+    private final String name;
 
     public Country(final BigDecimal peopleQuantity,final String countryName) {
-        this.peopleQuantity = peopleQuantity;
-        this.countryName = countryName;
+        this.peoplesCount = peopleQuantity;
+        this.name = countryName;
     }
 
     public BigDecimal getPeopleQuantity() {
-        return peopleQuantity;
+        return peoplesCount;
     }
 
 
     public String getCountryName() {
-        return countryName;
+        return name;
     }
 
     @Override
@@ -27,7 +27,7 @@ public final class Country {
 
         Country country = (Country) o;
 
-        return countryName.equals(country.countryName);
+        return name.equals(country.name);
     }
 
 

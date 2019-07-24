@@ -26,5 +26,6 @@ public class Computer {
 
     public void addWin(){
         wins++;
+        System.out.println("\nPrzegrales!!!\n");
     }
 }

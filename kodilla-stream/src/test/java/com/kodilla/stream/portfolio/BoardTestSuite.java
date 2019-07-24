@@ -146,7 +146,7 @@ public class BoardTestSuite {
 
         //When
         double average = project.getTaskLists().stream()
-                .filter(z -> z.getName() == "In progress")
+                .filter(z -> z.getName().equals("In progress"))
                 .flatMap(tl -> tl.getTasks().stream())
                 .mapToInt(t -> t.getCreated().compareTo(LocalDate.now()))
                 .average().orElse(-10000000);
