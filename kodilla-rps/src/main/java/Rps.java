@@ -50,7 +50,7 @@ public class Rps implements Text {
                     }
 
                     if ("1".equals(keyPressed) || "2".equals(keyPressed) || "3".equals(keyPressed)) {
-                        rpsProcessor.Game(keyPressed, player, computer, playerCall);
+                        rpsProcessor.game(keyPressed, player, computer, playerCall);
                         roundNumber = roundNumber + 1;
                     }
 

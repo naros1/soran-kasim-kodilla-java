@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class RpsProcessor {
 
-    public void Game(String keyPressed, Player player, Computer computer, int playerCall) {
+    public void game(String keyPressed, Player player, Computer computer, int playerCall) {
 
 
         System.out.println(player.getName() + " :");
