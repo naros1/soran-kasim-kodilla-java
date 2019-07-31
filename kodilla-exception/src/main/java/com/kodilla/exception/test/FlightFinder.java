@@ -12,21 +12,16 @@ public class FlightFinder {
         airports = new HashMap<>();
     }
 
+    public void addAirport(String name, Boolean status){
+        airports.put(name,status);
+    }
+
 
     public void findFlight(Flight flight) throws RouteNotFoundException {
-        airports.put("Berlin", true);
-        airports.put("Wroclaw", true);
-
-
-        if (flight.getArrivalAirport().equals("Wroclaw") || flight.getDeptureAirport().equals("Wroclaw")) {
-            airports.put("Hamburg", true);
-        } else if (flight.getDeptureAirport().equals("Berlin") || flight.getArrivalAirport().equals("Berlin")) {
-            airports.put("Hamburg", false);
-        }
 
         if (airports.get(flight.getArrivalAirport()) != null && airports.get(flight.getDeptureAirport()) != null) {
 
-            if (airports.get(flight.getArrivalAirport()) && airports.get(flight.getDeptureAirport())) {
+            if (airports.get(flight.getArrivalAirport()) && !flight.getArrivalAirport().equals(flight.getDeptureAirport())) {
 
                 System.out.println("You can travel form : " + flight.getDeptureAirport() + " to : " + flight.getArrivalAirport());
             } else {
