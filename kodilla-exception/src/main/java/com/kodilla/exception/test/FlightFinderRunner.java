@@ -10,5 +10,7 @@ public class FlightFinderRunner {
         } catch (RouteNotFoundException e) {
             System.out.println("Flight not existing! Try other destinations!");
         }
+
+
     }
 }

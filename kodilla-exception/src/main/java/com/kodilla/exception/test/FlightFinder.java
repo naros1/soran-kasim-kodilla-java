@@ -6,18 +6,25 @@ import java.util.Map;
 
 public class FlightFinder {
 
-    public void findFlight(Flight flight) throws RouteNotFoundException{
+    private Map<String, Boolean> airports;
 
-        Map<String,Boolean> airports = new HashMap<>();
+    public FlightFinder() {
+        airports = new HashMap<>();
+    }
+
+
+    public void findFlight(Flight flight) throws RouteNotFoundException {
         airports.put("Berlin", true);
         airports.put("Wroclaw", true);
-        if (flight.getArrivalAirport().equals("Wroclaw")|| flight.getDeptureAirport().equals("Wroclaw")) {
+
+
+        if (flight.getArrivalAirport().equals("Wroclaw") || flight.getDeptureAirport().equals("Wroclaw")) {
             airports.put("Hamburg", true);
-        } else if (flight.getDeptureAirport().equals("Berlin") || flight.getArrivalAirport().equals("Berlin")){
+        } else if (flight.getDeptureAirport().equals("Berlin") || flight.getArrivalAirport().equals("Berlin")) {
             airports.put("Hamburg", false);
         }
 
-        if (airports.get(flight.getArrivalAirport()) != null && airports.get(flight.getDeptureAirport()) != null){
+        if (airports.get(flight.getArrivalAirport()) != null && airports.get(flight.getDeptureAirport()) != null) {
 
             if (airports.get(flight.getArrivalAirport()) && airports.get(flight.getDeptureAirport())) {
 
@@ -32,5 +39,7 @@ public class FlightFinder {
 
             throw new RouteNotFoundException("Airport is not on the list");
         }
+
     }
+
 }
