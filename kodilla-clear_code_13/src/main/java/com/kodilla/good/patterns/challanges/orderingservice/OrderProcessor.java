@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challanges.orderingservice;
 
-import java.time.LocalDateTime;
-
 public class OrderProcessor {
     private InformationService informationService;
     private ProducOrderService producOrderService;
@@ -17,11 +15,11 @@ public class OrderProcessor {
 
     public OrderDto process(final OrderRequest orderRequest) {
         boolean isOrdered = producOrderService.order(orderRequest.getUser(), orderRequest.getOrder() ,
-                orderRequest.getOrderDAndT());
+                orderRequest.getOrderDateAndTime());
 
         if(isOrdered) {
             informationService.inform(orderRequest.getUser());
-            orderRepository.createOrder(orderRequest.getUser(),orderRequest.getOrder(),orderRequest.getOrderDAndT());
+            orderRepository.createOrder(orderRequest.getUser(),orderRequest.getOrder(),orderRequest.getOrderDateAndTime());
             return new OrderDto(orderRequest.getUser(),true);
         } else {
             return new OrderDto(orderRequest.getUser(),false);
