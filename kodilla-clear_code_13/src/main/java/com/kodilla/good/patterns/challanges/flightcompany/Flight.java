@@ -6,12 +6,16 @@ import java.time.LocalTime;
 public class Flight {
     private String depatureCity;
     private String arrvivalCity;
-    private LocalTime duration;
+    private LocalDateTime depature;
+    private LocalDateTime arvival;
+    private String flihgtNumber;
 
-    public Flight(String depatureCity, String arrvivalCity, LocalTime duration) {
+    public Flight(String depatureCity, String arrvivalCity, LocalDateTime depature, LocalDateTime arvival, String flihgtNumber) {
         this.depatureCity = depatureCity;
         this.arrvivalCity = arrvivalCity;
-        this.duration = duration;
+        this.depature = depature;
+        this.arvival = arvival;
+        this.flihgtNumber = flihgtNumber;
     }
 
     @Override
@@ -23,14 +27,14 @@ public class Flight {
 
         if (!depatureCity.equals(flight.depatureCity)) return false;
         if (!arrvivalCity.equals(flight.arrvivalCity)) return false;
-        return duration.equals(flight.duration);
+        return depature.equals(flight.depature);
     }
 
     @Override
     public int hashCode() {
         int result = depatureCity.hashCode();
         result = 31 * result + arrvivalCity.hashCode();
-        result = 31 * result + duration.hashCode();
+        result = 31 * result + depature.hashCode();
         return result;
     }
 
@@ -42,7 +46,15 @@ public class Flight {
         return arrvivalCity;
     }
 
-    public LocalTime getDuration() {
-        return duration;
+    public LocalDateTime getDepature() {
+        return depature;
+    }
+
+    public LocalDateTime getArvival() {
+        return arvival;
+    }
+
+    public String getFlihgtNumber() {
+        return flihgtNumber;
     }
 }

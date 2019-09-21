@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challanges.orderingservice;
 
-abstract class InformationService {
+public interface InformationService {
 
-    public void inform(User user){
-    }
+    void inform(User user);
 }

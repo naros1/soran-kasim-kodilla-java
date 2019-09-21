@@ -2,34 +2,23 @@ package com.kodilla.good.patterns.challanges.flightcompany;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class FlightDatabase {
-    private Map<Flight, LocalDateTime> flightDatabase;
+    private List<Flight> flightDatabase = new ArrayList<>();
 
-    public FlightDatabase(Map<Flight, LocalDateTime> flightDatabase) {
-        this.flightDatabase = new HashMap<>();
+    public FlightDatabase() {
     }
 
-    public boolean addFlightToDatabase(Flight flight, LocalDateTime localDateTime){
-        flightDatabase.put(flight,localDateTime);
-        return true;
-    }
-    
-    public String serchFlight(String depature, String arvvival, LocalDateTime localDateTime){
-        String result = flightDatabase.entrySet().stream()
-                .filter(s->s.getKey().getDepatureCity().equals(depature))
-                .filter(s->s.getKey().getArrvivalCity().equals(arvvival))
-                .filter(s->s.getValue().isAfter(localDateTime))
-                .map(s->s.getKey().getDepatureCity()+s.getValue())
-                .collect(Collectors.joining());
-
-
-        
-    return String
+    public void addFlightToDatabase(Flight flight) {
+        flightDatabase.add(flight);
     }
 
-
+    public List<Flight> getFlightDatabase() {
+        return flightDatabase;
+    }
 }
