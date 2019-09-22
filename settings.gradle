@@ -10,4 +10,6 @@ include 'kodilla-rps'
 include 'kodilla-exception'
 include 'kodilla-clear_code_13'
 include 'main'
+include 'kodilla-spring5'
+include 'kodilla-spring'
 
