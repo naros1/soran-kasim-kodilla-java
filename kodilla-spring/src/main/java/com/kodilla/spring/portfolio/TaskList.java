@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class TaskList {
-    final List<String> taska;
+    final List<String> tasks;
 
     public TaskList() {
-        taska = new ArrayList<>();
+        tasks = new ArrayList<>();
     }
 
     public Boolean addTask(String task){
-        taska.add(task);
+        tasks.add(task);
         return true;
     }
 
     public List<String> getTaska() {
-        return taska;
+        return tasks;
     }
+
 }
