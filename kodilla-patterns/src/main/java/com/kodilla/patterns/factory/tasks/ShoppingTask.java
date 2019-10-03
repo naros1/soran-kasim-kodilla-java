@@ -6,7 +6,7 @@ public class ShoppingTask implements Task {
     private final double quantity;
     private boolean taskStatus = false;
 
-    ShoppingTask(final String taskName, final String whatToBuy, final double quantity) {
+    public ShoppingTask(final String taskName, final String whatToBuy, final double quantity) {
         this.taskName = taskName;
         this.whatToBuy = whatToBuy;
         this.quantity = quantity;

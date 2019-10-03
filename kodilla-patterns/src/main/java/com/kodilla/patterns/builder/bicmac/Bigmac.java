@@ -41,11 +41,15 @@ public class Bigmac {
     }
 
 
-    private Bigmac(final String bun,final int burgers,final String sauce, List<String> ingredients) {
-        this.bun = bun;
-        this.burgers = burgers;
-        this.sauce = sauce;
-        this.ingredients = ingredients;
+    private Bigmac(final String bun, final int burgers, final String sauce, List<String> ingredients) {
+        if (bun != null && burgers > 0) {
+            this.bun = bun;
+            this.burgers = burgers;
+            this.sauce = sauce;
+            this.ingredients = ingredients;
+        } else {
+            throw new IllegalStateException("Bun can't be null and burgers count must be higher than 0! We don't serve vegan and wegetarian!!! ");
+        }
     }
 
     public String getBun() {

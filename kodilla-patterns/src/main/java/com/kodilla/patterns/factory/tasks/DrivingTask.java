@@ -6,7 +6,7 @@ public class DrivingTask implements Task {
     private final String using;
     private boolean taskStatus =false;
 
-    DrivingTask(final String taskName, final String where, final String using) {
+    public DrivingTask(final String taskName, final String where, final String using) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
