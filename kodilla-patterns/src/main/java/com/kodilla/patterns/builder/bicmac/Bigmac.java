@@ -1,5 +1,7 @@
 package com.kodilla.patterns.builder.bicmac;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,15 +17,11 @@ public class Bigmac {
         private String sauce;
         private List<String> ingredients = new ArrayList<>();
 
-        public BigmacBuilder bun(String bun) {
+        public BigmacBuilder(String bun, int burgers) {
             this.bun = bun;
-            return this;
+            this.burgers = burgers;
         }
 
-        public BigmacBuilder burgers(int burgers) {
-            this.burgers = burgers;
-            return this;
-        }
 
         public BigmacBuilder sauce(String sauce) {
             this.sauce = sauce;

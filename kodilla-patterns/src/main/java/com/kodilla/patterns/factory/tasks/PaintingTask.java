@@ -1,13 +1,12 @@
 package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Task {
-    private final String taskName;
+
     private final String color;
     private final String whatToPaint;
     private boolean taskStatus = false;
 
-    public PaintingTask(final String taskName, final String color, final String whatToPaint) {
-        this.taskName = taskName;
+    public PaintingTask(final String color, final String whatToPaint) {
         this.color = color;
         this.whatToPaint = whatToPaint;
     }
@@ -15,12 +14,12 @@ public class PaintingTask implements Task {
     @Override
     public String executeTask() {
         taskStatus = true;
-        return "Task " + taskName +" : "+ whatToPaint + " on color " + color + " was executed !";
+        return "Task " + whatToPaint + " on color " + color + " was executed !";
     }
 
     @Override
     public String getTaskName() {
-        return taskName;
+        return "Painting Task";
     }
 
     @Override
