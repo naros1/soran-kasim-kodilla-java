@@ -5,6 +5,10 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.retriveCompantWithLetters",
+        query = "FROM Company WHERE name LIKE :COMPANY"
+)
 @NamedNativeQuery(
         name = "Company.retriveCompanyWithFirstThreeLettersContains",
         query = "SELECT * FROM COMPANIES" +
