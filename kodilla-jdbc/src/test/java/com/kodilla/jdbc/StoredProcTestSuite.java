@@ -1,12 +1,11 @@
 package com.kodilla.jdbc;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class StoredProcTestSuite {
@@ -28,7 +27,7 @@ public class StoredProcTestSuite {
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(0, howMany);
+        Assertions.assertEquals(0, howMany);
     }
 
 
@@ -50,6 +49,6 @@ public class StoredProcTestSuite {
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(0, howMany);
+        Assertions.assertEquals(0, howMany);
     }
 }

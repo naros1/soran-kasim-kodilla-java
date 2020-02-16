@@ -2,10 +2,13 @@ package com.kodilla.jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DbManagerTestSuite {
     @Test
@@ -18,7 +21,7 @@ public class DbManagerTestSuite {
     }
 
     @Test
-    public void testSelectUsers()throws SQLException{
+    public void testSelectUsers() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
 
@@ -29,7 +32,7 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while (rs.next()){
+        while (rs.next()) {
             System.out.println(rs.getInt("ID") + ", " +
                     rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME"));
@@ -37,11 +40,11 @@ public class DbManagerTestSuite {
         }
         rs.close();
         statement.close();
-        Assert.assertEquals(6,counter);
+        Assert.assertEquals(6, counter);
     }
 
     @Test
-    public void testSelectUsersandPosts()throws SQLException{
+    public void testSelectUsersandPosts() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
 
@@ -55,7 +58,7 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while (rs.next()){
+        while (rs.next()) {
             System.out.println(rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME") + ", " +
                     "Posts number : " + rs.getInt("posts_number"));
@@ -63,6 +66,8 @@ public class DbManagerTestSuite {
         }
         rs.close();
         statement.close();
-        Assert.assertEquals(2,counter);
+        Assert.assertEquals(2, counter);
     }
 }
+
+
