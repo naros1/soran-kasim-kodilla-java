@@ -1,4 +1,5 @@
-package com.kodilla.stream.invoice.simple;
+package com.kodilla.patterns.invoice;
+
 
 import org.junit.Assert;
 import org.junit.Test;

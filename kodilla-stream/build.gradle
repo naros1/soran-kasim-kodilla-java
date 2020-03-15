@@ -2,8 +2,24 @@ plugins {
     id 'java'
 }
 
+plugins {
+    id 'java'
+}
+
 group 'com.kodilla6'
 version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+group 'kodilla-stream'
+version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 

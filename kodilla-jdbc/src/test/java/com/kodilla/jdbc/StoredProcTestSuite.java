@@ -3,6 +3,7 @@ package com.kodilla.jdbc;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
